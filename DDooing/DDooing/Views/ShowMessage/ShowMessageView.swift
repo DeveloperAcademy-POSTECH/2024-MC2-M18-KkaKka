@@ -99,10 +99,11 @@ struct ShowMessageView: View {
                                 Text(formattedTime(from: message.time))
                                     .foregroundStyle(.secondary)
                                     .font(.footnote)
+                                    .padding(.trailing,20)
                             }
                         }
                         .padding(.top, 20)
-                        .padding(.trailing,20)
+                        
                     }
                 }
         }
