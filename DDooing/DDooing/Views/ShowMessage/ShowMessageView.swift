@@ -102,6 +102,7 @@ struct ShowMessageView: View {
                             }
                         }
                         .padding(.top, 20)
+                        .padding(.trailing,20)
                     }
                 }
         }
