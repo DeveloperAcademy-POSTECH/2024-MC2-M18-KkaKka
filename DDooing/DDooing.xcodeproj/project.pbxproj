@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10DDE2562C00F07C0084E1BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DDE2552C00F07C0084E1BF /* GoogleService-Info.plist */; };
-		10DDE2572C00F07C0084E1BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DDE2552C00F07C0084E1BF /* GoogleService-Info.plist */; };
-		10DDE2582C00F07C0084E1BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DDE2552C00F07C0084E1BF /* GoogleService-Info.plist */; };
-		10DDE2592C00F07C0084E1BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DDE2552C00F07C0084E1BF /* GoogleService-Info.plist */; };
-		10DDE25B2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDE25A2C00F7F40084E1BF /* NotificationDataModel.swift */; };
-		10DDE25C2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDE25A2C00F7F40084E1BF /* NotificationDataModel.swift */; };
-		10DDE25D2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDE25A2C00F7F40084E1BF /* NotificationDataModel.swift */; };
-		10DDE25E2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDE25A2C00F7F40084E1BF /* NotificationDataModel.swift */; };
-		10DDE2602C00F9AA0084E1BF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 10DDE25F2C00F9AA0084E1BF /* FirebaseMessaging */; };
 		4F1A593D2BF8892000C3EF2C /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A59342BF8892000C3EF2C /* Pretendard-ExtraBold.otf */; };
 		4F1A593E2BF8892000C3EF2C /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A59342BF8892000C3EF2C /* Pretendard-ExtraBold.otf */; };
 		4F1A593F2BF8892000C3EF2C /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A59342BF8892000C3EF2C /* Pretendard-ExtraBold.otf */; };
@@ -156,9 +147,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10DDE24D2C00EF2D0084E1BF /* DDooingRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DDooingRelease.entitlements; sourceTree = "<group>"; };
-		10DDE2552C00F07C0084E1BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		10DDE25A2C00F7F40084E1BF /* NotificationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDataModel.swift; sourceTree = "<group>"; };
 		4F1A59342BF8892000C3EF2C /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		4F1A59352BF8892000C3EF2C /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		4F1A59362BF8892000C3EF2C /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -173,6 +161,7 @@
 		4F3F813B2BFDDCEC008C920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3F813D2BFDDDE2008C920C /* WidgetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColor.swift; sourceTree = "<group>"; };
 		4F3F81532BFE63CA008C920C /* AppModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelContainer.swift; sourceTree = "<group>"; };
+		4F8D878C2BFF84DF006BEF4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FAD25AC2BF3339A00EBD37A /* DDooing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDooing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAD25AF2BF3339A00EBD37A /* DDooingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDooingApp.swift; sourceTree = "<group>"; };
 		4FAD25B12BF3339A00EBD37A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -213,7 +202,6 @@
 			files = (
 				4FD812D32BF87AB900F16ED0 /* FirebaseDatabaseSwift in Frameworks */,
 				4FD812D12BF87AB900F16ED0 /* FirebaseDatabase in Frameworks */,
-				10DDE2602C00F9AA0084E1BF /* FirebaseMessaging in Frameworks */,
 				4FD812CD2BF87AB900F16ED0 /* FirebaseAnalytics in Frameworks */,
 				4FD812D52BF87AB900F16ED0 /* FirebaseFirestore in Frameworks */,
 				4FD812CF2BF87AB900F16ED0 /* FirebaseAuth in Frameworks */,
@@ -294,7 +282,6 @@
 			children = (
 				9D79E9362BF5FAD700A05D95 /* MessageModel.swift */,
 				4F3F81532BFE63CA008C920C /* AppModelContainer.swift */,
-				10DDE25A2C00F7F40084E1BF /* NotificationDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,7 +345,7 @@
 		4FAD25A32BF3339A00EBD37A = {
 			isa = PBXGroup;
 			children = (
-				10DDE2552C00F07C0084E1BF /* GoogleService-Info.plist */,
+				4F8D878C2BFF84DF006BEF4A /* GoogleService-Info.plist */,
 				4FBE64CB2BFDCB80008363A0 /* DDooingWidgetExtension.entitlements */,
 				4FAD25AE2BF3339A00EBD37A /* DDooing */,
 				4FAD25BF2BF3339B00EBD37A /* DDooingTests */,
@@ -384,7 +371,6 @@
 		4FAD25AE2BF3339A00EBD37A /* DDooing */ = {
 			isa = PBXGroup;
 			children = (
-				10DDE24D2C00EF2D0084E1BF /* DDooingRelease.entitlements */,
 				4F1A595C2BF8896A00C3EF2C /* Info.plist */,
 				4FAD25B52BF3339B00EBD37A /* Preview Content */,
 				4F3E652B2BFB14CE00996806 /* Views */,
@@ -476,7 +462,6 @@
 				4FD812D22BF87AB900F16ED0 /* FirebaseDatabaseSwift */,
 				4FD812D42BF87AB900F16ED0 /* FirebaseFirestore */,
 				4FD812D62BF87AB900F16ED0 /* FirebaseFirestoreSwift */,
-				10DDE25F2C00F9AA0084E1BF /* FirebaseMessaging */,
 			);
 			productName = DDooing;
 			productReference = 4FAD25AC2BF3339A00EBD37A /* DDooing.app */;
@@ -600,11 +585,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F8D878D2BFF864F006BEF4A /* GoogleService-Info.plist in Resources */,
 				4FAD25B72BF3339B00EBD37A /* Preview Assets.xcassets in Resources */,
 				4F1A59492BF8892000C3EF2C /* Pretendard-Bold.otf in Resources */,
 				4F3F813C2BFDDCEC008C920C /* Assets.xcassets in Resources */,
 				4F1A59432BF8892000C3EF2C /* Pretendard-Regular.otf in Resources */,
-				10DDE2562C00F07C0084E1BF /* GoogleService-Info.plist in Resources */,
 				4F1A59552BF8892000C3EF2C /* Pretendard-SemiBold.otf in Resources */,
 				4F1A594C2BF8892000C3EF2C /* Pretendard-Thin.otf in Resources */,
 				4F1A594F2BF8892000C3EF2C /* Pretendard-Black.otf in Resources */,
@@ -628,7 +613,6 @@
 				4F1A59442BF8892000C3EF2C /* Pretendard-Regular.otf in Resources */,
 				4F1A59562BF8892000C3EF2C /* Pretendard-SemiBold.otf in Resources */,
 				4F1A59502BF8892000C3EF2C /* Pretendard-Black.otf in Resources */,
-				10DDE2572C00F07C0084E1BF /* GoogleService-Info.plist in Resources */,
 				4F1A593E2BF8892000C3EF2C /* Pretendard-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,7 +629,6 @@
 				4F1A59452BF8892000C3EF2C /* Pretendard-Regular.otf in Resources */,
 				4F1A59572BF8892000C3EF2C /* Pretendard-SemiBold.otf in Resources */,
 				4F1A59512BF8892000C3EF2C /* Pretendard-Black.otf in Resources */,
-				10DDE2582C00F07C0084E1BF /* GoogleService-Info.plist in Resources */,
 				4F1A593F2BF8892000C3EF2C /* Pretendard-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,7 +648,7 @@
 				4F6D48A22C00BF54008B2A7F /* Pretendard-Black.otf in Resources */,
 				4F6D48AA2C00BF67008B2A7F /* Pretendard-Thin.otf in Resources */,
 				4F6D48AD2C00BF8D008B2A7F /* Assets.xcassets in Resources */,
-				4F8D878E2BFF8650006BEF4A /* GoogleService-Info.plist in Resources */
+				4F8D878E2BFF8650006BEF4A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +675,6 @@
 				4FAD25B02BF3339A00EBD37A /* DDooingApp.swift in Sources */,
 				4F3F81542BFE63CA008C920C /* AppModelContainer.swift in Sources */,
 				4F1A59592BF8894600C3EF2C /* FontManager.swift in Sources */,
-				10DDE25B2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */,
 				4FF515982BF33FD70056531C /* ShowMessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,7 +684,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1A595A2BF8894600C3EF2C /* FontManager.swift in Sources */,
-				10DDE25C2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */,
 				4FAD25C12BF3339B00EBD37A /* DDooingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,7 +694,6 @@
 			files = (
 				4FAD25CB2BF3339B00EBD37A /* DDooingUITests.swift in Sources */,
 				4F1A595B2BF8894600C3EF2C /* FontManager.swift in Sources */,
-				10DDE25D2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */,
 				4FAD25CD2BF3339B00EBD37A /* DDooingUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,7 +716,6 @@
 				4FBE64BC2BFDC940008363A0 /* DDooingWidgetLiveActivity.swift in Sources */,
 				4F6D489B2C00BEEB008B2A7F /* LoginView.swift in Sources */,
 				4F3F81402BFDE116008C920C /* WidgetColor.swift in Sources */,
-				10DDE25E2C00F7F40084E1BF /* NotificationDataModel.swift in Sources */,
 				4F3F81552BFE63CA008C920C /* AppModelContainer.swift in Sources */,
 				4F6D48AB2C00BF88008B2A7F /* UserStatusViewModel.swift in Sources */,
 				4F6D489D2C00BEFC008B2A7F /* PartnerNameView.swift in Sources */,
@@ -896,7 +875,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DDooing/Preview Content\"";
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DDooing/Info.plist;
@@ -910,7 +889,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -925,12 +904,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DDooing/DDooingRelease.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DDooing/DDooing.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DDooing/Preview Content\"";
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DDooing/Info.plist;
@@ -944,7 +923,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -960,11 +939,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -980,11 +959,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -999,10 +978,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooingUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1017,10 +996,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooingUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1038,7 +1017,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DDooingWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DDooingWidget;
@@ -1049,7 +1028,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooing.DDooingWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooing.DDooingWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1067,7 +1046,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GB5WJ43G4;
+				DEVELOPMENT_TEAM = U6CCD5BT22;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DDooingWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DDooingWidget;
@@ -1078,7 +1057,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDevJoy.DDooing.DDooingWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seodongwon.DDooing.DDooingWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1149,11 +1128,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		10DDE25F2C00F9AA0084E1BF /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4FD812C72BF8798A00F16ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
 		4FBE64D12BFDD572008363A0 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4FD812C72BF8798A00F16ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

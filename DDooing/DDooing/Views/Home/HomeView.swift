@@ -12,38 +12,26 @@ import SwiftData
 
 struct HomeView: View {
     @State var name: String = ""
-    @State var partnerName: String = ""
     @Environment(\.modelContext) private var modelContext
     @Query private var messages: [MessageModel]
-    @State private var pushMessage : String = ""
+    @State private var randomMessages : String = ""
     @State private var showContextMenu = false
     let partnerUID: String!
     @GestureState private var isPressed = false
     @State private var isLongPressed = false
-    @Query<NotificationDataModel> private var notificationDataList: [NotificationDataModel]
-    @State var partnerDeviceToken = ""
     
     init(partnerUID: String?) {
         self.partnerUID = partnerUID
         if messages.randomElement() != nil {
-            _pushMessage = State(initialValue: pushMessage)
+            _randomMessages = State(initialValue: randomMessages)
         } else {
-            _pushMessage = State(initialValue: "")
+            _randomMessages = State(initialValue: "")
         }
     }
     
     var body: some View {
         NavigationStack{
             VStack {
-                HStack {
-                    Text("DDooing")
-                        .font(.largeTitle.bold())
-                    Spacer()
-                }
-                .padding(.vertical)
-                
-                Spacer()
-                
                 Image("Heart button")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -65,9 +53,7 @@ struct HomeView: View {
                         ForEach(messages) { mess in
                             if mess.isStarred {
                                 Button (action: {
-                                    pushMessage = mess.message
-                                    sendMessage(messageText: pushMessage, isStarred: true)
-                                    fetchAccessTokenAndSendPushNotification()
+                                    sendMessage(messageText: mess.message, isStarred: true)
                                 }, label: {
                                     Text(mess.message)
                                 })
@@ -79,11 +65,10 @@ struct HomeView: View {
                                 if !isLongPressed {
                                     print("짧게누름")
                                     if let randomMessage = messages.randomElement() {
-                                        pushMessage = randomMessage.message
+                                        randomMessages = randomMessage.message
                                     }
+                                    saveRandomMessage()
                                     print("메시지 입력")
-                                    sendMessage(messageText: pushMessage, isStarred: false)
-                                    fetchAccessTokenAndSendPushNotification()
                                 }
                                 isLongPressed = false
                             }
@@ -91,41 +76,67 @@ struct HomeView: View {
                 Text("\(postPositionText(name)) 생각하며 눌러보세요.")
                     .font(.headline)
                     .padding(.bottom,60)
-                Spacer()
+
+
+                
+                
+                
+                
+                
+
             }
             .padding()
+            .navigationTitle("DDooing")
             .onAppear {
                 fetchMyConnectedNickname { fetchedName in
                     name = fetchedName
                     
                 }
-
-            }
-        }
-    }
-    func fetchPartnerDeviceToken(completion: @escaping (String) -> Void) {
-        let db = Firestore.firestore()
-        db.collection("Users").document(partnerUID).getDocument { document, error in
-            if let document = document, document.exists {
-                partnerDeviceToken = document.data()?["deviceToken"] as? String ?? "Unknown"
-                completion(partnerDeviceToken)
-            } else {
-                completion("Unknown")
             }
         }
     }
     
-    func fetchPartnerConnectedNickname(completion: @escaping (String) -> Void) {
-        let db = Firestore.firestore()
-        db.collection("Users").document(partnerUID).getDocument { document, error in
-            if let document = document, document.exists {
-                partnerName = document.data()?["ConnectedNickname"] as? String ?? "Unknown"
-                completion(partnerName)
-            } else {
-                completion("Unknown")
-            }
-        }
+    func saveRandomMessage() {
+        guard let partnerUID = partnerUID else { return }
+        sendMessage(messageText: randomMessages, isStarred: false)
     }
+    
+    func sendMessage(messageText: String, isStarred: Bool) {
+        let db = Firestore.firestore()
+        
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        
+        let currenrUserRef = db.collection("Received-Messages")
+            .document(currentUid).collection(partnerUID).document()
+        
+        let PartnerRef = db.collection("Received-Messages")
+            .document(partnerUID).collection(currentUid)
+        
+//        let recentCurrentUserRef = db.collection("Received-Messages")
+//            .document(currentUid).collection("recent-messages")
+//            .document(partnerUID)
+        
+        let recentPartnerRef = db.collection("Received-Messages")
+            .document(partnerUID).collection("recent-messages")
+            .document(currentUid)
+        
+        let messageId = currenrUserRef.documentID
+        
+        let messageData: [String: Any] = [
+            "fromId": currentUid,
+            "toId": partnerUID!,
+            "messageText": messageText,
+            "timeStamp": Timestamp(date: Date()),
+            "isStarred": isStarred,
+            "messageId": messageId
+        ]
+        
+//        currenrUserRef.setData(messageData)
+        PartnerRef.document(messageId).setData(messageData)
+//        recentCurrentUserRef.setData(messageData)
+        recentPartnerRef.setData(messageData)
+    }
+    
     private func fetchMyConnectedNickname(completion: @escaping (String) -> Void) {
         let db = Firestore.firestore()
         guard let currentUid = Auth.auth().currentUser?.uid else {
@@ -141,127 +152,6 @@ struct HomeView: View {
                 completion("Unknown")
             }
         }
-    }
-    
-    func sendMessage(messageText: String, isStarred: Bool) {
-        let db = Firestore.firestore()
-        
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        
-        let currentUserRef = db.collection("Received-Messages")
-            .document(partnerUID).collection(currentUid).document()
-        
-//        let recentCurrentUserRef = db.collection("Received-Messages")
-//            .document(partnerUID).collection("recent-messages")
-//            .document(currentUid)
-        
-        let messageId = currentUserRef.documentID
-        
-        let messageData: [String: Any] = [
-            "fromId": partnerUID!,
-            "toId": currentUid,
-            "messageText": messageText,
-            "timeStamp": Timestamp(date: Date()),
-            "isStarred": isStarred,
-            "messageId": messageId
-        ]
-        
-        currentUserRef.setData(messageData)
-//        recentCurrentUserRef.setData(messageData)
-    }
-    
-    func fetchAccessTokenAndSendPushNotification() {
-        fetchPartnerDeviceToken { fetchedtoken in
-            partnerDeviceToken = fetchedtoken
-        }
-        fetchPartnerConnectedNickname { fetchedName in
-            partnerName = fetchedName
-        }
-        
-        // 서버로부터 OAuth 2.0 액세스 토큰 가져오기
-        guard let url = URL(string: "") else {
-            print("Invalid URL for token")
-            return
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: request) { data, response, err in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
-            guard let data = data else {
-                print("No data received")
-                return
-            }
-            
-            // 서버로부터 받은 응답을 문자열로 변환하여 출력
-            if let accessToken = String(data: data, encoding: .utf8) {
-                print("Access Token String: \(accessToken)")
-                sendPushNotification(with: accessToken)
-            } else {
-                print("Invalid token response")
-            }
-        }.resume()
-    }
-    
-    func sendPushNotification(with accessToken: String)  {
-        guard !accessToken.isEmpty else {
-            print("Access token is empty")
-            return
-        }
-        
-        // HTTP v1 API의 엔드포인트 URL
-        guard let url = URL(string: "https://fcm.googleapis.com/v1/projects/ddooing-8881b/messages:send") else {
-            print("Invalid URL for FCM")
-            return
-        }
-        print("partnerdevicetoken >>> \(partnerDeviceToken)")
-        print("pushMessage >>> \(pushMessage)")
-        print("parname >>> \(partnerName)")
-        let json: [String: Any] = [
-            "message": [
-                "token": partnerDeviceToken,
-                "notification": [
-                    "body": pushMessage,
-                    "title": partnerName
-                ]
-            ]
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: request) { data, response, err in
-                if let err = err {
-                    print("Error sending push notification: \(err.localizedDescription)")
-                    return
-                }
-                
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    print("Invalid response")
-                    return
-                }
-                
-                print("Push notification response status code: \(httpResponse.statusCode)")
-            
-            if let data = data, let responseBody = String(data: data, encoding: .utf8) {
-                        print("Response Body: \(responseBody)")
-                    }
-                
-                if httpResponse.statusCode == 200 {
-                    print("Push notification sent successfully")
-                } else {
-                    print("Failed to send push notification")
-                }
-        }.resume()
     }
     
 }
