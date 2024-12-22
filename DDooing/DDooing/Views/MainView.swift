@@ -54,26 +54,8 @@ struct MainView: View {
                                     self.partnerUID = partnerDocument.documentID
                                     
                                     defaults.set(partnerUID,forKey: "partnerUID")
-//                                    print(defaults.string(forKey: "partnerUID"))
-//                                    print(defaults.string(forKey: "currentUserUID"))
                                 }
                             }
-                            
-                            /** 주의 해주세요!! 아래 코드를 사용할 시, 계정 하나로도 테스트 가능합니다. 하지만, 아래 코드로 다른 두 계정을 테스트하면 사용자를 잘 못 찾아 오류가 생길 수 있습니다. 두 계정으로 테스트할 시에는 위에 코드를 사용해주세요! 커밋 시 기본적인 세팅은 위 코드로 부탁드립니다. **/
-                            
-                            //                                if let error = error {
-                            //                                    print("Error getting documents: \(error)")
-                            //                                } else if let querySnapshot = querySnapshot, !querySnapshot.documents.isEmpty {
-                            //                                    let document = querySnapshot.documents.first
-                            //                                    if let uidB = document?["uid"] as? String {
-                            //                                        self.partnerUID = uidB
-                            //                                        if let nonOptionalUID = self.partnerUID {
-                            //                                            print("파트너 uid: \(nonOptionalUID)")
-                            //                                        }
-                            //                                    }
-                            //                                } else {
-                            //                                    print("사용자를 찾을 수 없습니다.")
-                            //                                }
                         }
                 }
             }

@@ -127,7 +127,6 @@ struct HomeView: View {
                 partnerDeviceToken = document.data()?["deviceToken"] as? String ?? "Unknown"
                 
                 defaults.set(partnerDeviceToken,forKey: "partnerDeviceToken")
-                print(defaults.string(forKey: "partnerDeviceToken"))
                 
                 completion(partnerDeviceToken)
             } else {
@@ -144,7 +143,6 @@ struct HomeView: View {
                 partnerName = document.data()?["ConnectedNickname"] as? String ?? "Unknown"
                 
                 defaults.set(partnerName,forKey: "partnerName")
-                print(defaults.string(forKey: "partnerName"))
                 
                 completion(partnerName)
             } else {
@@ -203,7 +201,7 @@ struct HomeView: View {
         }
         
         // 서버로부터 OAuth 2.0 액세스 토큰 가져오기
-        guard let url = URL(string: "") else {
+        guard let url = URL(string: "http://localhost:3000/getAccessToken") else {
             print("Invalid URL for token")
             return
         }
@@ -356,7 +354,7 @@ fileprivate struct ParticleModifier: ViewModifier {
                         }
                     }
                 }
-                .onChange(of: status) { newValue in
+                .onChange(of: status) { _, newValue in
                     if !newValue {
                         for i in particles.indices {
                             particles[i].reset()
@@ -402,5 +400,3 @@ fileprivate struct ParticleModifier: ViewModifier {
     HomeView(partnerUID: nil)
         .modelContainer(for: MessageModel.self,  inMemory: true)
 }
-
-

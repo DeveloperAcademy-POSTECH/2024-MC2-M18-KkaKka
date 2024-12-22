@@ -59,10 +59,7 @@ struct TextEditView: View {
                                 .listRowSeparator(.hidden)
                         }
                         .background()
-                    })) 
-                    
-                    
-                    {
+                    })){
                         if messages.isEmpty {
                             Text("새로운 메세지 문구를 추가해 주세요 (◍⁃͈ᴗ•͈)")
                                 .font(.pretendardRegular16)

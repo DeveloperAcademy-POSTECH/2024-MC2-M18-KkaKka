@@ -62,7 +62,6 @@ struct PartnerNameView: View {
     
     private func setUsersNickname(nick nickname : String, userAUID: String) {
         let db = Firestore.firestore()
-        let docRef = db.collection("Users").document(userAUID)
 
         db.collection("Users").document(userAUID).updateData([
             "ConnectedNickname": nickname
